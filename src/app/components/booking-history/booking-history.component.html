@@ -1,0 +1,19 @@
+<div class="booking-history">
+  <h3>Recent Bookings</h3>
+  <div class="bookings-list">
+    <div *ngIf="(bookings$ | async) as bookings">
+      <div *ngIf="bookings.length === 0" class="no-bookings">
+        No bookings yet. Start exploring!
+      </div>
+      <div *ngFor="let booking of bookings" class="booking-item">
+        <div class="booking-info">
+          <p class="stay-name">{{ booking.stayName }}</p>
+          <p class="city-name">{{ booking.cityName }}</p>
+          <p class="user-name">Booked by: {{ booking.userName }}</p>
+          <p class="dates">{{ booking.checkInDate }} - {{ booking.checkOutDate }}</p>
+          <p class="price">${{ booking.totalPrice }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

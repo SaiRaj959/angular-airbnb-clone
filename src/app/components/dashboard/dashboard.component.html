@@ -1,0 +1,26 @@
+<div class="dashboard-container">
+  <header class="header">
+    <div class="logo">🏠 Airbnb Clone</div>
+  </header>
+
+  <div class="main-content">
+    <h1>Explore Destinations</h1>
+
+    <div class="cities-grid">
+      <div *ngIf="cities$ | async as cities">
+        <div *ngFor="let city of cities" class="city-card" (click)="selectCity(city)">
+          <img [src]="city.image" [alt]="city.name" class="city-image">
+          <div class="city-info">
+            <h2>{{ city.name }}</h2>
+            <p>{{ city.description }}</p>
+            <button class="explore-btn">Explore</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <app-booking-history></app-booking-history>
+  </footer>
+</div>

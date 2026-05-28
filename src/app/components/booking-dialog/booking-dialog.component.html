@@ -1,0 +1,83 @@
+<div class="dialog-content">
+  <div class="image-section">
+    <div class="image-container">
+      <img [src]="stay.images[currentImageIndex]" [alt]="stay.name">
+      <button class="nav-btn prev-btn" (click)="previousImage()">❮</button>
+      <button class="nav-btn next-btn" (click)="nextImage()">❯</button>
+      <div class="image-indicator">
+        {{ currentImageIndex + 1 }} / {{ stay.images.length }}
+      </div>
+    </div>
+  </div>
+
+  <div class="details-section">
+    <h2>{{ stay.name }}</h2>
+
+    <div class="rating-info">
+      <span class="rating">⭐ {{ stay.rating }}</span>
+      <span class="reviews">({{ stay.reviews }} reviews)</span>
+    </div>
+
+    <div class="stay-details">
+      <div class="detail">
+        <strong>Bedrooms:</strong> {{ stay.bedrooms }}
+      </div>
+      <div class="detail">
+        <strong>Bathrooms:</strong> {{ stay.bathrooms }}
+      </div>
+      <div class="detail">
+        <strong>Max Guests:</strong> {{ stay.maxGuests }}
+      </div>
+    </div>
+
+    <div class="price-info">
+      <p class="price">${{ stay.price }} <span class="per-night">per night</span></p>
+    </div>
+
+    <div class="booking-form">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input
+          type="text"
+          [(ngModel)]="userName"
+          placeholder="Enter your name"
+          class="form-input">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Check-in Date</label>
+          <input
+            type="date"
+            [(ngModel)]="checkInDate"
+            (change)="calculatePrice()"
+            class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label>Check-out Date</label>
+          <input
+            type="date"
+            [(ngModel)]="checkOutDate"
+            (change)="calculatePrice()"
+            class="form-input">
+        </div>
+      </div>
+
+      <div class="price-summary">
+        <p class="summary-item">
+          <span>${{ stay.price }} × {{ totalNights }} nights</span>
+          <span>${{ stay.price * totalNights }}</span>
+        </p>
+        <p class="total">
+          <strong>Total: ${{ totalPrice }}</strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="cancel-btn" (click)="onCancel()">Cancel</button>
+      <button class="book-btn" (click)="bookNow()">Confirm Booking</button>
+    </div>
+  </div>
+</div>

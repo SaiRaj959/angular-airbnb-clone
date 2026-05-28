@@ -1,0 +1,52 @@
+<div class="stays-container">
+  <header class="header">
+    <button class="back-btn" (click)="goBack()">← Back</button>
+    <h1>{{ cityName }} - Available Stays</h1>
+  </header>
+
+  <div class="stays-grid">
+    <div *ngFor="let stay of stays" class="stay-card">
+      <div class="stay-image">
+        <img [src]="stay.images[0]" [alt]="stay.name">
+        <div class="price-badge">${{ stay.price }}/night</div>
+      </div>
+
+      <div class="stay-content">
+        <h3>{{ stay.name }}</h3>
+
+        <div class="rating">
+          <span class="stars">⭐ {{ stay.rating }}</span>
+          <span class="reviews">({{ stay.reviews }} reviews)</span>
+        </div>
+
+        <p class="description">{{ stay.description }}</p>
+
+        <div class="details">
+          <div class="detail-item">
+            <span class="label">Bedrooms:</span>
+            <span class="value">{{ stay.bedrooms }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Bathrooms:</span>
+            <span class="value">{{ stay.bathrooms }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Max Guests:</span>
+            <span class="value">{{ stay.maxGuests }}</span>
+          </div>
+        </div>
+
+        <div class="amenities">
+          <strong>Amenities:</strong>
+          <div class="amenity-list">
+            <span *ngFor="let amenity of stay.amenities" class="amenity-tag">
+              {{ amenity }}
+            </span>
+          </div>
+        </div>
+
+        <button class="book-btn" (click)="openBookingDialog(stay)">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,194 @@
+.stays-container {
+  background: #f5f5f5;
+  min-height: 100vh;
+  padding-bottom: 40px;
+
+  .header {
+    background: white;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .back-btn {
+      padding: 8px 16px;
+      background-color: #f0f0f0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+
+    h1 {
+      margin: 0;
+      flex: 1;
+      color: #333;
+      font-size: 28px;
+    }
+  }
+
+  .stays-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .stay-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s, transform 0.3s;
+
+      &:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        transform: translateY(-4px);
+      }
+
+      .stay-image {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .price-badge {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background-color: rgba(0, 0, 0, 0.7);
+          color: white;
+          padding: 8px 12px;
+          border-radius: 4px;
+          font-weight: bold;
+          font-size: 14px;
+        }
+      }
+
+      .stay-content {
+        padding: 20px;
+
+        h3 {
+          margin: 0 0 10px 0;
+          font-size: 18px;
+          color: #333;
+          height: 2.4em;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+
+        .rating {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 12px;
+          font-size: 13px;
+
+          .stars {
+            color: #ff9500;
+            font-weight: bold;
+          }
+
+          .reviews {
+            color: #666;
+          }
+        }
+
+        .description {
+          color: #666;
+          font-size: 13px;
+          margin: 0 0 15px 0;
+          line-height: 1.4;
+        }
+
+        .details {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+          margin-bottom: 15px;
+          padding: 12px;
+          background-color: #f9f9f9;
+          border-radius: 4px;
+
+          .detail-item {
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+
+            .label {
+              color: #999;
+              margin-bottom: 2px;
+            }
+
+            .value {
+              color: #333;
+              font-weight: bold;
+            }
+          }
+        }
+
+        .amenities {
+          margin-bottom: 15px;
+
+          strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #333;
+          }
+
+          .amenity-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+          }
+
+          .amenity-tag {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+          }
+        }
+
+        .book-btn {
+          width: 100%;
+          padding: 12px;
+          background-color: #ff6b6b;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: #ff5252;
+          }
+
+          &:active {
+            transform: scale(0.98);
+          }
+        }
+      }
+    }
+  }
+}
