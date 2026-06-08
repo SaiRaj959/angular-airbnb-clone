@@ -1,0 +1,14 @@
+src/app/components/booking-dialog/booking-dialog.component.ts
+  h_d51aebadd309b8 10,12,86,89,93,97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "401f5de96fbfa1bfd479fc4534c9c0a0709675be",
+  "prompts": {},
+  "humans": {
+    "h_d51aebadd309b8": {
+      "author": "Sairaj.Kujala <sairaj.kujala@Sarass-MacBook-Pro.local>"
+    }
+  }
+}
