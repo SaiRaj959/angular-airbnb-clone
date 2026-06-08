@@ -1,0 +1,12 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "f755629f761a5217ea1b895f38a5073c3b166428",
+  "prompts": {},
+  "humans": {
+    "h_d51aebadd309b8": {
+      "author": "Sairaj.Kujala <sairaj.kujala@Sarass-MacBook-Pro.local>"
+    }
+  }
+}
