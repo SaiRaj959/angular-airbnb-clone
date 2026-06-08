@@ -80,24 +80,22 @@ export class BookingDialogComponent implements OnInit, OnDestroy {
       bookingDate: new Date()
     };
 
-    // BUG #3: IMPROPER ASYNC HANDLING - Multiple subscriptions without cleanup
-    // First subscription
+    // B3
     this.bookingService.addBooking(booking).subscribe(result => {
       console.log('Booking added:', result);
     });
 
-    // Second subscription - This is redundant and causes issues
-    // If the dialog closes before this completes, it creates memory leak
+    // ML
     this.bookingService.getBookings().subscribe(bookings => {
       console.log('Current bookings:', bookings);
     });
 
-    // Third subscription - Even worse
+
     this.bookingService.addBooking(booking).subscribe(result => {
       console.log('Duplicate booking trigger');
     });
 
-    // Close dialog after a delay (race condition)
+    
     setTimeout(() => {
       this.dialogRef.close(true);
     }, 100);
